@@ -6,12 +6,12 @@ use Codedor\LivewireForms\Fields\Flash;
 use Codedor\LivewireForms\Fields\ImageField;
 use Codedor\LivewireForms\Fields\MultiFileField;
 use Codedor\LivewireForms\Fields\TextField;
-use Tests\TestForm;
-use Tests\TestStepForm;
-use Tests\TestWithConditionalFieldForm;
-use Tests\TestWithFileForm;
-use Tests\TestWithFileStepForm;
-use Tests\TestWithFlashForm;
+use Tests\Fixtures\TestForm;
+use Tests\Fixtures\TestStepForm;
+use Tests\Fixtures\TestWithConditionalFieldForm;
+use Tests\Fixtures\TestWithFileForm;
+use Tests\Fixtures\TestWithFileStepForm;
+use Tests\Fixtures\TestWithFlashForm;
 
 test('form sets form-binding session', function () {
     new TestForm();
@@ -40,10 +40,20 @@ test('form returns field stack with conditional fields', function () {
     );
 
     session()->put('form-fields.show_name', true);
-    $this->assertEquals(
-        $form->fields(),
-        $form->fieldStack(true)
-    );
+
+    expect($form->fields())
+        ->sequence(
+            fn ($field) => $field
+                ->toBeInstanceOf(CheckboxField::class)
+                ->name->toBe('show_name'),
+            fn ($field) => $field
+                ->toBeInstanceOf(TextField::class)
+                ->name->toBe('name'),
+            fn ($field) => $field
+                ->toBeInstanceOf(TextField::class)
+                ->name->toBe('last_name'),
+        )
+    ;
 });
 
 test('form field stack skips non-fields', function () {
@@ -77,7 +87,10 @@ test('form sets validation for fields', function () {
 
     $this->assertEquals(
         [
-            'fields.name' => 'required',
+            'rules' => [
+                'fields.name' => 'required',
+            ],
+            'messages' => []
         ],
         $form->validation()
     );
@@ -88,7 +101,10 @@ test('form sets validation for files', function () {
 
     $this->assertEquals(
         [
-            'files.image' => 'required',
+            'rules' => [
+                'files.image' => 'required',
+            ],
+            'messages' => []
         ],
         $form->validation()
     );
@@ -100,7 +116,10 @@ test('form skips conditional validation', function () {
     session()->put('form-fields.show_name', false);
     $this->assertEquals(
         [
-            'fields.show_name' => '',
+            'rules' => [
+                'fields.show_name' => '',
+            ],
+            'messages' => []
         ],
         $form->validation()
     );
@@ -108,9 +127,12 @@ test('form skips conditional validation', function () {
     session()->put('form-fields.show_name', true);
     $this->assertEquals(
         [
-            'fields.show_name' => '',
-            'fields.name' => '',
-            'fields.last_name' => '',
+            'rules' => [
+                'fields.show_name' => '',
+                'fields.name' => '',
+                'fields.last_name' => '',
+            ],
+            'messages' => []
         ],
         $form->validation()
     );
@@ -121,8 +143,11 @@ test('form sets validation for steps', function () {
 
     $this->assertEquals(
         [
-            'fields.name' => 'required',
-            'fields.company' => 'required',
+            'rules' => [
+                'fields.name' => 'required',
+                'fields.company' => 'required',
+            ],
+            'messages' => []
         ],
         $form->validation()
     );
@@ -172,14 +197,20 @@ test('form returns validation for specific step', function () {
 
     $this->assertEquals(
         [
-            'fields.name' => 'required',
+            'rules' => [
+                'fields.name' => 'required',
+            ],
+            'messages' => []
         ],
         $form->stepValidation(1)
     );
 
     $this->assertEquals(
         [
-            'fields.company' => 'required',
+            'rules' => [
+                'fields.company' => 'required',
+            ],
+            'messages' => []
         ],
         $form->stepValidation(2)
     );

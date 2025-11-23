@@ -7,4 +7,5 @@ yarn-error.log
 composer.lock
 .phpunit.result.cache
 .php-cs-fixer.cache
-
+.claude
+.phpunit.cache

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Tests\Fixtures;
 
 use Codedor\LivewireForms\Fields\TextField;
 use Codedor\LivewireForms\Form;

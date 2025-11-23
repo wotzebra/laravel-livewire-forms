@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Codedor\LivewireForms\LivewireFormsServiceProvider;
-use Codedor\Media\Providers\MacroServiceProvider;
+use Illuminate\Http\UploadedFile;
 use Livewire\LivewireServiceProvider;
 use PeterColes\Countries\CountriesServiceProvider;
 
@@ -30,14 +30,9 @@ class TestCase extends \Orchestra\Testbench\TestCase
             'prefix' => '',
         ]);
 
-        $app['config']->set('media.types.image', ['image/jpeg']);
-        $app['config']->set('media.types.document', ['application/pdf']);
-        $app['config']->set('media.formats', [
-            'thumb' => 'Codedor\Media\Filters\ThumbFilter',
-            'low_res' => 'Codedor\Media\Filters\LowResFilter',
-        ]);
-
-        $app['config']->set('translatable.locales', ['en']);
+        UploadedFile::macro('save', function () {
+            return 'test';
+        });
     }
 
     protected function getPackageProviders($app)
@@ -45,24 +40,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
         return [
             LivewireServiceProvider::class,
             LivewireFormsServiceProvider::class,
-            MacroServiceProvider::class,
             CountriesServiceProvider::class,
         ];
     }
 
-    /**
-     * Define database migrations.
-     *
-     * @return void
-     */
     protected function defineDatabaseMigrations()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../vendor/codedor/laravel-media/database/migrations');
-
-        $this->artisan('migrate')->run();
-
-        $this->beforeApplicationDestroyed(function () {
-            $this->artisan('migrate:fresh')->run();
-        });
+        $this->loadMigrationsFrom(__DIR__ . '/Fixtures/Database/migrations/create_attachments_table.php');
     }
 }
