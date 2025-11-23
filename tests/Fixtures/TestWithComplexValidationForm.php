@@ -4,8 +4,6 @@ namespace Tests\Fixtures;
 
 use Codedor\LivewireForms\Fields\TextField;
 use Codedor\LivewireForms\Form;
-use Illuminate\Validation\Rule;
-use Illuminate\Validation\Rules\RequiredIf;
 
 class TestWithComplexValidationForm extends Form
 {

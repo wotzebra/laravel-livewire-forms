@@ -90,7 +90,7 @@ test('form sets validation for fields', function () {
             'rules' => [
                 'fields.name' => 'required',
             ],
-            'messages' => []
+            'messages' => [],
         ],
         $form->validation()
     );
@@ -104,7 +104,7 @@ test('form sets validation for files', function () {
             'rules' => [
                 'files.image' => 'required',
             ],
-            'messages' => []
+            'messages' => [],
         ],
         $form->validation()
     );
@@ -119,7 +119,7 @@ test('form skips conditional validation', function () {
             'rules' => [
                 'fields.show_name' => '',
             ],
-            'messages' => []
+            'messages' => [],
         ],
         $form->validation()
     );
@@ -132,7 +132,7 @@ test('form skips conditional validation', function () {
                 'fields.name' => '',
                 'fields.last_name' => '',
             ],
-            'messages' => []
+            'messages' => [],
         ],
         $form->validation()
     );
@@ -147,7 +147,7 @@ test('form sets validation for steps', function () {
                 'fields.name' => 'required',
                 'fields.company' => 'required',
             ],
-            'messages' => []
+            'messages' => [],
         ],
         $form->validation()
     );
@@ -200,7 +200,7 @@ test('form returns validation for specific step', function () {
             'rules' => [
                 'fields.name' => 'required',
             ],
-            'messages' => []
+            'messages' => [],
         ],
         $form->stepValidation(1)
     );
@@ -210,7 +210,7 @@ test('form returns validation for specific step', function () {
             'rules' => [
                 'fields.company' => 'required',
             ],
-            'messages' => []
+            'messages' => [],
         ],
         $form->stepValidation(2)
     );
