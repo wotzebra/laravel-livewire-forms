@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests;
+namespace Tests\Fixtures;
 
-use Codedor\LivewireForms\Fields\CheckboxField;
-use Codedor\LivewireForms\Fields\TextField;
-use Codedor\LivewireForms\Form;
+use Wotz\LivewireForms\Fields\CheckboxField;
+use Wotz\LivewireForms\Fields\TextField;
+use Wotz\LivewireForms\Form;
 
 class TestWithConditionalFieldForm extends Form
 {

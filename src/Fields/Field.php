@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\LivewireForms\Fields;
+namespace Wotz\LivewireForms\Fields;
 
 use Closure;
 use Illuminate\Support\Str;

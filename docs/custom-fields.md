@@ -9,7 +9,7 @@ Let's for example create a `SupermanField`, you'll need to create a field file f
 
 namespace App\Fields;
 
-use Codedor\LivewireForms\Fields\Field;
+use Wotz\LivewireForms\Fields\Field;
 
 class SupermanField extends Field
 {

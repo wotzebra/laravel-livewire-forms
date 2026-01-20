@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\LivewireForms\Traits;
+namespace Wotz\LivewireForms\Traits;
 
 use Illuminate\Validation\ValidationException;
 

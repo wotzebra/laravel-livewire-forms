@@ -1,10 +1,9 @@
 <?php
 
-namespace Tests;
+namespace Tests\Fixtures;
 
-use Codedor\LivewireForms\Fields\TextField;
-use Codedor\LivewireForms\Form;
-use Illuminate\Validation\Rules\RequiredIf;
+use Wotz\LivewireForms\Fields\TextField;
+use Wotz\LivewireForms\Form;
 
 class TestWithComplexValidationForm extends Form
 {
@@ -12,12 +11,12 @@ class TestWithComplexValidationForm extends Form
     {
         return [
             TextField::make('validation_object')
-                ->rules(new RequiredIf(true)),
+                ->rules('required'),
             TextField::make('validation_uppercase')
                 ->rules(UppercaseRule::class),
             TextField::make('validation_array')
                 ->rules([
-                    new RequiredIf(true),
+                    'required',
                     UppercaseRule::class,
                 ]),
         ];

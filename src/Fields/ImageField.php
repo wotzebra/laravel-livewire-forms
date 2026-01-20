@@ -1,8 +1,6 @@
 <?php
 
-namespace Codedor\LivewireForms\Fields;
-
-use Codedor\MediaLibrary\Models\Attachment;
+namespace Wotz\LivewireForms\Fields;
 
 class ImageField extends Field
 {
@@ -11,19 +9,4 @@ class ImageField extends Field
     public $value = false;
 
     public $containsFile = true;
-
-    public function getValue($doConditionalChecks = false)
-    {
-        $value = parent::getValue($doConditionalChecks);
-
-        if ($value === '') {
-            return $value;
-        }
-
-        if (Attachment::find($value)) {
-            return Attachment::find($value)->getFormatOrOriginal($this->format ?? '');
-        }
-
-        return $value;
-    }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests;
+namespace Tests\Fixtures;
 
-use Codedor\LivewireForms\Fields\Flash;
-use Codedor\LivewireForms\Form;
+use Wotz\LivewireForms\Fields\Flash;
+use Wotz\LivewireForms\Form;
 
 class TestWithFlashForm extends Form
 {

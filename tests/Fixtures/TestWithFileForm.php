@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests;
+namespace Tests\Fixtures;
 
-use Codedor\LivewireForms\Fields\ImageField;
-use Codedor\LivewireForms\Form;
+use Wotz\LivewireForms\Fields\ImageField;
+use Wotz\LivewireForms\Form;
 
 class TestWithFileForm extends Form
 {
