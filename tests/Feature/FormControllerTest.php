@@ -2,8 +2,8 @@
 
 use Wotz\LivewireForms\FormController;
 use Illuminate\Http\UploadedFile;
-use Livewire\Livewire;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Livewire\Livewire;
 use Tests\Fixtures\TestForm;
 use Tests\Fixtures\TestFormController;
 use Tests\Fixtures\TestStepForm;

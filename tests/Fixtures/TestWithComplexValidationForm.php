@@ -4,8 +4,6 @@ namespace Tests\Fixtures;
 
 use Wotz\LivewireForms\Fields\TextField;
 use Wotz\LivewireForms\Form;
-use Illuminate\Validation\Rule;
-use Illuminate\Validation\Rules\RequiredIf;
 
 class TestWithComplexValidationForm extends Form
 {
