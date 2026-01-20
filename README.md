@@ -7,7 +7,7 @@ Package to easily configure Livewire forms with a set of existing fields.
 You can install the package via composer:
 
 ```bash
-composer require codedor/laravel-livewire-forms
+composer require wotz/laravel-livewire-forms
 ```
 
 You can publish the config file with:

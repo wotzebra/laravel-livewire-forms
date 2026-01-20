@@ -17,7 +17,7 @@ To start with, we will need to define the fields for our form. To do this, creat
 
 namespace App\Forms;
 
-use Codedor\LivewireForms\Form;
+use Wotz\LivewireForms\Form;
 
 class RegistrationForm extends Form
 {
@@ -40,7 +40,7 @@ Let's start by adding fields for the username, email and password, along with a 
 Read more about the different field types and how to work with them [here](./fields.md).
 
 ```php
-use Codedor\LivewireForms\Fields\;
+use Wotz\LivewireForms\Fields\;
 
 public function fields(): array
 {
@@ -97,7 +97,7 @@ Make a new file called `App\Http\Livewire\RegistrationForm.php`
 
 namespace App\Http\Livewire;
 
-use Codedor\LivewireForms\FormController;
+use Wotz\LivewireForms\FormController;
 
 class RegistrationForm extends FormController
 {
