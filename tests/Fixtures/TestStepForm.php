@@ -2,10 +2,10 @@
 
 namespace Tests\Fixtures;
 
-use Codedor\LivewireForms\Fields\Button;
-use Codedor\LivewireForms\Fields\Step;
-use Codedor\LivewireForms\Fields\TextField;
-use Codedor\LivewireForms\Form;
+use Wotz\LivewireForms\Fields\Button;
+use Wotz\LivewireForms\Fields\Step;
+use Wotz\LivewireForms\Fields\TextField;
+use Wotz\LivewireForms\Form;
 
 class TestStepForm extends Form
 {

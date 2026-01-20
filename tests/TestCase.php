@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Codedor\LivewireForms\LivewireFormsServiceProvider;
+use Wotz\LivewireForms\LivewireFormsServiceProvider;
 use Illuminate\Http\UploadedFile;
 use Livewire\LivewireServiceProvider;
 use PeterColes\Countries\CountriesServiceProvider;

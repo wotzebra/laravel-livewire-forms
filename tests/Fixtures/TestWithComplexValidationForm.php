@@ -2,8 +2,8 @@
 
 namespace Tests\Fixtures;
 
-use Codedor\LivewireForms\Fields\TextField;
-use Codedor\LivewireForms\Form;
+use Wotz\LivewireForms\Fields\TextField;
+use Wotz\LivewireForms\Form;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\RequiredIf;
 

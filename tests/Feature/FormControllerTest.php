@@ -1,6 +1,6 @@
 <?php
 
-use Codedor\LivewireForms\FormController;
+use Wotz\LivewireForms\FormController;
 use Illuminate\Http\UploadedFile;
 use Livewire\Livewire;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;

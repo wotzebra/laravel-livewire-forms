@@ -1,6 +1,6 @@
 <?php
 
-use Codedor\LivewireForms\Fields\Field;
+use Wotz\LivewireForms\Fields\Field;
 
 it('can generate an ID', function () {
     $field = new Field('name');

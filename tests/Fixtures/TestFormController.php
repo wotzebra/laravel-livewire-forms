@@ -2,7 +2,7 @@
 
 namespace Tests\Fixtures;
 
-use Codedor\LivewireForms\FormController;
+use Wotz\LivewireForms\FormController;
 use Tests\Fixtures\Models\Attachment;
 
 class TestFormController extends FormController

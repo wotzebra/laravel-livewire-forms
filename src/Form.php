@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\LivewireForms;
+namespace Wotz\LivewireForms;
 
-use Codedor\LivewireForms\Fields\Field;
+use Wotz\LivewireForms\Fields\Field;
 
 abstract class Form
 {

@@ -2,11 +2,11 @@
 
 namespace Tests\Fixtures;
 
-use Codedor\LivewireForms\Fields\Button;
-use Codedor\LivewireForms\Fields\MultiFileField;
-use Codedor\LivewireForms\Fields\Step;
-use Codedor\LivewireForms\Fields\TextField;
-use Codedor\LivewireForms\Form;
+use Wotz\LivewireForms\Fields\Button;
+use Wotz\LivewireForms\Fields\MultiFileField;
+use Wotz\LivewireForms\Fields\Step;
+use Wotz\LivewireForms\Fields\TextField;
+use Wotz\LivewireForms\Form;
 
 class TestWithFileStepForm extends Form
 {

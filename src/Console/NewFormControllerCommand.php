@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\LivewireForms\Console;
+namespace Wotz\LivewireForms\Console;
 
 use Illuminate\Console\GeneratorCommand;
 

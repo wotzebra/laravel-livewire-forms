@@ -1,5 +1,5 @@
 {
-    "name": "codedor/laravel-livewire-forms",
+    "name": "wotz/laravel-livewire-forms",
     "description": "Easy to build/use livewire forms.",
     "keywords": [
         "laravel"
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Codedor\\LivewireForms\\": "src/"
+            "Wotz\\LivewireForms\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Codedor\\LivewireForms\\LivewireFormsServiceProvider"
+                "Wotz\\LivewireForms\\LivewireFormsServiceProvider"
             ]
         }
     },

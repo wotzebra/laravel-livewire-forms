@@ -1,6 +1,6 @@
 <?php
 
-use Codedor\LivewireForms\Fields\CountryField;
+use Wotz\LivewireForms\Fields\CountryField;
 
 it('can render the country field', function () {
     $countryFieldView = CountryField::make('country', 'Country')

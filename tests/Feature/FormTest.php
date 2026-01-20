@@ -1,11 +1,11 @@
 <?php
 
-use Codedor\LivewireForms\Fields\Button;
-use Codedor\LivewireForms\Fields\CheckboxField;
-use Codedor\LivewireForms\Fields\Flash;
-use Codedor\LivewireForms\Fields\ImageField;
-use Codedor\LivewireForms\Fields\MultiFileField;
-use Codedor\LivewireForms\Fields\TextField;
+use Wotz\LivewireForms\Fields\Button;
+use Wotz\LivewireForms\Fields\CheckboxField;
+use Wotz\LivewireForms\Fields\Flash;
+use Wotz\LivewireForms\Fields\ImageField;
+use Wotz\LivewireForms\Fields\MultiFileField;
+use Wotz\LivewireForms\Fields\TextField;
 use Tests\Fixtures\TestForm;
 use Tests\Fixtures\TestStepForm;
 use Tests\Fixtures\TestWithConditionalFieldForm;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\LivewireForms\Fields;
+namespace Wotz\LivewireForms\Fields;
 
-use Codedor\LinkPicker\LinkPickerRoute;
+use Wotz\LinkPicker\LinkPickerRoute;
 
 class Link extends Field
 {

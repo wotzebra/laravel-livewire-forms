@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\LivewireForms;
+namespace Wotz\LivewireForms;
 
 use Illuminate\Support\ServiceProvider;
 
