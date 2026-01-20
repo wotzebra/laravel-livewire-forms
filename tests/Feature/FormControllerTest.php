@@ -1,6 +1,5 @@
 <?php
 
-use Wotz\LivewireForms\FormController;
 use Illuminate\Http\UploadedFile;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\Livewire;
@@ -12,6 +11,7 @@ use Tests\Fixtures\TestWithFileForm;
 use Tests\Fixtures\TestWithFileStepForm;
 use Tests\Fixtures\TestWithFlashForm;
 use Tests\Fixtures\TestWithModelForm;
+use Wotz\LivewireForms\FormController;
 
 test('form controller throws exception if formClass is not passed', function () {
     $this->expectException(Exception::class);

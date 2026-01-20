@@ -64,7 +64,7 @@ class Field
         }
 
         if ($usePrefixes && $this->groupPrefixes !== []) {
-            return implode('.', $this->groupPrefixes) . '.' . $name;
+            return implode('.', $this->groupPrefixes).'.'.$name;
         }
 
         return $name;
@@ -76,7 +76,7 @@ class Field
             return $this->fieldId;
         }
 
-        return $this->fieldId = Str::slug($this->getName() . '-' . Str::random(8));
+        return $this->fieldId = Str::slug($this->getName().'-'.Str::random(8));
     }
 
     public function getValue($doConditionalChecks = false)

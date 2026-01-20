@@ -40,7 +40,7 @@ trait HandleFiles
             return $file->save($field->disk ?? 'public');
         } catch (ValidationException $e) {
             throw ValidationException::withMessages([
-                'files.' . $field->getName() => $e->getMessage(),
+                'files.'.$field->getName() => $e->getMessage(),
             ]);
         }
     }

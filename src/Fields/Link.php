@@ -34,6 +34,6 @@ class Link extends Field
     {
         json_decode($value);
 
-        return (json_last_error() == JSON_ERROR_NONE);
+        return json_last_error() == JSON_ERROR_NONE;
     }
 }

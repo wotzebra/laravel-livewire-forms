@@ -1,26 +1,26 @@
 <?php
 
-use Wotz\LivewireForms\Fields\Button;
-use Wotz\LivewireForms\Fields\CheckboxField;
-use Wotz\LivewireForms\Fields\Flash;
-use Wotz\LivewireForms\Fields\ImageField;
-use Wotz\LivewireForms\Fields\MultiFileField;
-use Wotz\LivewireForms\Fields\TextField;
 use Tests\Fixtures\TestForm;
 use Tests\Fixtures\TestStepForm;
 use Tests\Fixtures\TestWithConditionalFieldForm;
 use Tests\Fixtures\TestWithFileForm;
 use Tests\Fixtures\TestWithFileStepForm;
 use Tests\Fixtures\TestWithFlashForm;
+use Wotz\LivewireForms\Fields\Button;
+use Wotz\LivewireForms\Fields\CheckboxField;
+use Wotz\LivewireForms\Fields\Flash;
+use Wotz\LivewireForms\Fields\ImageField;
+use Wotz\LivewireForms\Fields\MultiFileField;
+use Wotz\LivewireForms\Fields\TextField;
 
 test('form sets form-binding session', function () {
-    new TestForm();
+    new TestForm;
 
     $this->assertEquals('livewire', session('form-binding'));
 });
 
 test('form returns field stack', function () {
-    $form = new TestForm();
+    $form = new TestForm;
 
     $this->assertEquals(
         $form->fields(),
@@ -29,7 +29,7 @@ test('form returns field stack', function () {
 });
 
 test('form returns field stack with conditional fields', function () {
-    $form = new TestWithConditionalFieldForm();
+    $form = new TestWithConditionalFieldForm;
     session()->put('form-fields.show_name', false);
 
     $this->assertEquals(
@@ -52,12 +52,11 @@ test('form returns field stack with conditional fields', function () {
             fn ($field) => $field
                 ->toBeInstanceOf(TextField::class)
                 ->name->toBe('last_name'),
-        )
-    ;
+        );
 });
 
 test('form field stack skips non-fields', function () {
-    $form = new TestWithFlashForm();
+    $form = new TestWithFlashForm;
 
     $this->assertEquals(
         [],
@@ -66,7 +65,7 @@ test('form field stack skips non-fields', function () {
 });
 
 test('form return field stack from field', function () {
-    $form = new TestStepForm();
+    $form = new TestStepForm;
 
     $this->assertCount(
         1,
@@ -75,7 +74,7 @@ test('form return field stack from field', function () {
 });
 
 test('form return empty field stack from non-step field', function () {
-    $form = new TestWithFlashForm();
+    $form = new TestWithFlashForm;
 
     $this->assertEmpty(
         $form->getFieldStackFromField(Flash::make('auth-errors'))
@@ -83,7 +82,7 @@ test('form return empty field stack from non-step field', function () {
 });
 
 test('form sets validation for fields', function () {
-    $form = new TestForm();
+    $form = new TestForm;
 
     $this->assertEquals(
         [
@@ -97,7 +96,7 @@ test('form sets validation for fields', function () {
 });
 
 test('form sets validation for files', function () {
-    $form = new TestWithFileForm();
+    $form = new TestWithFileForm;
 
     $this->assertEquals(
         [
@@ -111,7 +110,7 @@ test('form sets validation for files', function () {
 });
 
 test('form skips conditional validation', function () {
-    $form = new TestWithConditionalFieldForm();
+    $form = new TestWithConditionalFieldForm;
 
     session()->put('form-fields.show_name', false);
     $this->assertEquals(
@@ -139,7 +138,7 @@ test('form skips conditional validation', function () {
 });
 
 test('form sets validation for steps', function () {
-    $form = new TestStepForm();
+    $form = new TestStepForm;
 
     $this->assertEquals(
         [
@@ -154,7 +153,7 @@ test('form sets validation for steps', function () {
 });
 
 test('form returns fields stack for specific step', function () {
-    $form = new TestStepForm();
+    $form = new TestStepForm;
 
     $this->assertEquals(
         collect([
@@ -172,7 +171,7 @@ test('form returns fields stack for specific step', function () {
 });
 
 test('form returns fields for specific step', function () {
-    $form = new TestStepForm();
+    $form = new TestStepForm;
 
     $this->assertEquals(
         [
@@ -193,7 +192,7 @@ test('form returns fields for specific step', function () {
 });
 
 test('form returns validation for specific step', function () {
-    $form = new TestStepForm();
+    $form = new TestStepForm;
 
     $this->assertEquals(
         [
@@ -217,7 +216,7 @@ test('form returns validation for specific step', function () {
 });
 
 test('form returns file fields', function () {
-    $form = new TestWithFileForm();
+    $form = new TestWithFileForm;
 
     $this->assertEquals(
         [
@@ -231,7 +230,7 @@ test('form returns file fields', function () {
 });
 
 test('form returns field stack for files for specific step', function () {
-    $form = new TestWithFileStepForm();
+    $form = new TestWithFileStepForm;
 
     $this->assertEquals(
         [],

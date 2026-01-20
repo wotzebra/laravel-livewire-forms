@@ -7,6 +7,7 @@ use Wotz\LivewireForms\Fields\Field;
 abstract class Form
 {
     public $fields = null;
+
     public $binding = 'livewire';
 
     abstract public function fields();
@@ -19,8 +20,9 @@ abstract class Form
 
     /**
      * Return only the fields and nested fields (without Row, Group, ...)
-     * @param bool $doConditionalChecks  Return all the fields, or filter them on conditionals
-     * @param array   $stack                Return the fieldStack of a stack of fields
+     *
+     * @param  bool  $doConditionalChecks  Return all the fields, or filter them on conditionals
+     * @param  array  $stack  Return the fieldStack of a stack of fields
      */
     public function fieldStack($doConditionalChecks = false, $stack = null): array
     {
@@ -69,8 +71,8 @@ abstract class Form
         $fields->each(function (Field $value) use (&$rules, &$messages, $skipChecks) {
             if ($skipChecks || $value->conditionalCheck()) {
                 $target = ($value->containsFile ? 'files' : 'fields');
-                $rules->put($target . '.' . $value->getName(), $value->rules ?? '');
-                $messages->put($target . '.' . $value->getName(), $value->validationMessages ?? '');
+                $rules->put($target.'.'.$value->getName(), $value->rules ?? '');
+                $messages->put($target.'.'.$value->getName(), $value->validationMessages ?? '');
             }
         });
 

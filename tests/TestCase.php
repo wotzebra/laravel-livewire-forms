@@ -2,10 +2,10 @@
 
 namespace Tests;
 
-use Wotz\LivewireForms\LivewireFormsServiceProvider;
 use Illuminate\Http\UploadedFile;
 use Livewire\LivewireServiceProvider;
 use PeterColes\Countries\CountriesServiceProvider;
+use Wotz\LivewireForms\LivewireFormsServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -17,7 +17,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     /**
      * Set up the environment.
      *
-     * @param \Illuminate\Foundation\Application $app
+     * @param  \Illuminate\Foundation\Application  $app
      */
     protected function getEnvironmentSetUp($app)
     {
@@ -46,6 +46,6 @@ class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function defineDatabaseMigrations()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/Fixtures/Database/migrations/create_attachments_table.php');
+        $this->loadMigrationsFrom(__DIR__.'/Fixtures/Database/migrations/create_attachments_table.php');
     }
 }

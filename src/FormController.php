@@ -2,13 +2,13 @@
 
 namespace Wotz\LivewireForms;
 
-use Wotz\LivewireForms\Fields\Field;
 use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\View;
 use Livewire\Component;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use Livewire\WithFileUploads;
+use Wotz\LivewireForms\Fields\Field;
 
 class FormController extends Component
 {
@@ -18,17 +18,25 @@ class FormController extends Component
     use WithFileUploads;
 
     public string $formClass;
+
     public string $modelClass;
 
-    public null | string $locale = null;
-    public null | string $component;
+    public ?string $locale = null;
+
+    public ?string $component;
+
     public array $fields = [];
+
     public array $validation = [];
+
     public array $syncs = [];
+
     public array $flashes = [];
 
     protected array $messages = [];
-    protected null | Form $form = null;
+
+    protected ?Form $form = null;
+
     protected array $fieldStack = [];
 
     public function hydrate()
@@ -107,7 +115,7 @@ class FormController extends Component
 
     public function getForm()
     {
-        return (new $this->formClass);
+        return new $this->formClass;
     }
 
     public function flash($name, $message)

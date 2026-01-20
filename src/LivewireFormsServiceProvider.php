@@ -10,7 +10,7 @@ class LivewireFormsServiceProvider extends ServiceProvider
     {
         $this->loadViews();
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/livewire-forms.php',
+            __DIR__.'/../config/livewire-forms.php',
             'livewire-forms'
         );
 
@@ -19,18 +19,18 @@ class LivewireFormsServiceProvider extends ServiceProvider
 
     public function loadViews()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'livewire-forms');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'livewire-forms');
     }
 
     public function publishData()
     {
         $this->publishes(
-            [__DIR__ . '/../resources/views' => resource_path('views/vendor/livewire-forms')],
+            [__DIR__.'/../resources/views' => resource_path('views/vendor/livewire-forms')],
             'laravel-livewire-forms-views'
         );
 
         $this->publishes([
-            __DIR__ . '/../config/livewire-forms.php' => config_path('livewire-forms.php'),
+            __DIR__.'/../config/livewire-forms.php' => config_path('livewire-forms.php'),
         ], 'laravel-livewire-forms-config');
     }
 

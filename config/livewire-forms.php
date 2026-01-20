@@ -23,5 +23,5 @@ return [
         'buttonClass' => 'btn btn--primary',
         'buttonIcon' => null,
         'textareaRows' => 5,
-    ]
+    ],
 ];

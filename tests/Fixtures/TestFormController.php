@@ -2,8 +2,8 @@
 
 namespace Tests\Fixtures;
 
-use Wotz\LivewireForms\FormController;
 use Tests\Fixtures\Models\Attachment;
+use Wotz\LivewireForms\FormController;
 
 class TestFormController extends FormController
 {
