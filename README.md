@@ -56,6 +56,20 @@ php artisan vendor:publish --tag="laravel-livewire-forms-views"
 
 For the full documentation, check [here](./docs/index.md).
 
+## AI Guidelines
+
+This package includes AI guidelines and skills for [Laravel Boost](https://laravel.com/docs/boost), providing AI agents with context about the package's conventions and best practices.
+
+When using Laravel Boost, run:
+
+```bash
+php artisan boost:install
+```
+
+The installer will automatically detect this package and include its guidelines. The `livewire-forms-development` skill will also be available for on-demand detailed guidance while building forms.
+
+Learn more in [resources/boost/README.md](./resources/boost/README.md).
+
 ## Testing
 
 ```bash
