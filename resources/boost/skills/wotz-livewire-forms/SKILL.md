@@ -14,6 +14,14 @@ Use this skill when:
 - Handling file uploads in forms
 - Customizing form submission behavior
 
+## Installation
+
+```bash
+composer require wotz/laravel-livewire-forms
+php artisan vendor:publish --tag="laravel-livewire-forms-config"
+php artisan vendor:publish --tag="laravel-livewire-forms-views"
+```
+
 ## Quick Start
 
 Generate a new form with both Form and FormController classes:
@@ -95,6 +103,12 @@ class ContactForm extends FormController
         parent::afterSubmit();
     }
 }
+```
+
+## Using the Form in Blade
+
+```blade
+@livewire('contact-form')
 ```
 
 ## Field Types Reference
