@@ -1,5 +1,5 @@
 ---
-name: livewire-forms-development
+name: wotz-livewire-forms
 description: Build and work with Laravel Livewire Forms, including form creation, field types, validation, multi-step forms, and file uploads.
 ---
 
