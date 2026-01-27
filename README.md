@@ -66,9 +66,9 @@ When using Laravel Boost, run:
 php artisan boost:install
 ```
 
-The installer will automatically detect this package and include its guidelines. The `livewire-forms-development` skill will also be available for on-demand detailed guidance while building forms.
+The installer will automatically detect this package and include its guidelines. The `wotz-livewire-forms` skill will also be available for on-demand detailed guidance while building forms.
 
-Learn more in [resources/boost/README.md](./resources/boost/README.md).
+Learn more in [https://laravel.com/docs/12.x/boost](https://laravel.com/docs/12.x/boost).
 
 ## Testing
 
