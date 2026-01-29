@@ -1,18 +1,23 @@
 ---
 name: wotz-livewire-forms
-description: Build and work with Laravel Livewire Forms, including form creation, field types, validation, multi-step forms, and file uploads.
+description: Build Laravel forms using the Wotz Livewire Forms package - handles form creation, field types, validation, multi-step forms, conditional fields, and file uploads.
 ---
 
 # Laravel Livewire Forms Development
 
 ## When to use this skill
 
-Use this skill when:
-- Creating or modifying Livewire forms
-- Working with form fields, validation, or conditional logic
-- Implementing multi-step forms
-- Handling file uploads in forms
-- Customizing form submission behavior
+**Use this skill for ANY form-related work in projects using the Wotz Laravel Livewire Forms package.**
+
+Common scenarios:
+- Creating new forms (contact forms, registration forms, checkout forms, feedback forms, etc.)
+- Adding, modifying, or removing form fields
+- Working with form validation (basic rules, custom rules, conditional validation)
+- Implementing conditional fields or dynamic form behavior
+- Building multi-step forms or wizards
+- Handling file uploads (single files, images, multiple files)
+- Customizing form submission behavior or lifecycle hooks
+- Debugging form issues or understanding form structure
 
 ## Installation
 
