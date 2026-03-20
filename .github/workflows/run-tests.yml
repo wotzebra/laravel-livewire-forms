@@ -10,7 +10,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [self-hosted]
-        php: [8.0, 8.1]
+        php: [8.3, 8.4, 8.5]
         laravel: [9.*]
         stability: [prefer-stable]
         include:
