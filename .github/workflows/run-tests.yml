@@ -2,20 +2,26 @@ name: Tests
 
 on: [pull_request]
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
-    container: setupphp/node:latest
     strategy:
       fail-fast: true
       matrix:
-        os: [self-hosted]
+        os: [ubuntu-latest, windows-latest]
         php: [8.3, 8.4, 8.5]
-        laravel: [9.*]
+        laravel: [11.*, 12.*, 13.*]
         stability: [prefer-stable]
         include:
-          - laravel: 9.*
-            testbench: 7.*
+          - laravel: 11.*
+            testbench: 9.*
+          - laravel: 12.*
+            testbench: 10.*
+          - laravel: 13.*
+            testbench: 11.*
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
@@ -29,17 +35,6 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
           coverage: none
-
-      - name: Authenticate repman
-        env: # Or as an environment variable
-          REPMAN_TOKEN: ${{ secrets.REPMAN_TOKEN }}
-        run: composer config --global --auth http-basic.codedor.repo.repman.io token ${REPMAN_TOKEN}
-
-      - name: Login to Laravel Nova
-        run: composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
-        env:
-          NOVA_USERNAME: ${{ secrets.NOVA_USERNAME }}
-          NOVA_PASSWORD: ${{ secrets.NOVA_PASSWORD }}
 
       - name: Setup problem matchers
         run: |

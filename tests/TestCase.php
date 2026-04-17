@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Http\UploadedFile;
 use Livewire\LivewireServiceProvider;
 use PeterColes\Countries\CountriesServiceProvider;
@@ -17,7 +18,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     /**
      * Set up the environment.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      */
     protected function getEnvironmentSetUp($app)
     {
