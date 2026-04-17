@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Codedor\LivewireForms\Form;
+use Wotz\LivewireForms\Form;
 
 class DummyClass extends Form
 {
