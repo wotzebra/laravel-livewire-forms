@@ -9,7 +9,7 @@
         id="{{ $field->getName() }}"
         type="{{ $field->type ?? 'text' }}"
         name="{{ $field->getName() }}"
-        placeholder="{{ $field->getLabel() }}"
+        placeholder="{{ $field->getPlaceholder() }}"
         value="{{ $field->getValue() }}"
         @if($field->readOnly) disabled @endif
         @if ($field->dusk) dusk={{ $field->dusk }} @endif

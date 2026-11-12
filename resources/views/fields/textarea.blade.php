@@ -8,7 +8,7 @@
         @include('livewire-forms::fields.binding')
         id="{{ $field->getName() }}"
         name="{{ $field->getName() }}"
-        placeholder="{{ $field->getLabel() }}"
+        placeholder="{{ $field->getPlaceholder() }}"
         rows="{{ $field->rows ?? config('livewire-forms.defaults.textareaRows') }}"
         @if ($field->dusk) dusk={{ $field->dusk }} @endif
         @class([
